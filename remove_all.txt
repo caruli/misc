@@ -1,0 +1,24 @@
+
+
+unzip -p 2019-11-13-raspbian-stretch.zip | sudo dd of=/dev/sdX bs=4M status=progress conv=fsync
+
+
+shopt -s extglob 
+sudo rm --   !(blfs-book-svn-html-2019-05-22.tar.bz2)
+
+# remove directory too
+shopt -s extglob 
+sudo rm -rf --   !(blfs-book-svn-html-2019-05-22.tar.bz2)
+
+(or calling bash -O extglob)
+
+# exctract content
+mkdir -p test && tar xjvf blfs-book-svn-html-2019-05-22.tar.bz2 -C $_
+
+Another neat short hand is !$ which is an alias for the last argument of the previous command. This can be handy 
+if one creates a new directory and wants to change into it without typing the the directory again.
+
+mkdir -p make/new/directory
+cd !$
+
+help dirs - Display directory stack.
