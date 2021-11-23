@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include "tc.h"
 
-float sum(float mbank, float tipsport, float bank_notes, float coins, float care_benefit);
-float mbank = 72.06, tipsport = 0.80,bank_notes = 185.00, coins=13.30, care_benefit=508.44;
+float sum(float tipsport,float mbank, float bank_notes, float coins, float care_benefit);
+
+const  float mbank = 47.11, tipsport = 0.80, bank_notes = 115.00, coins=10.30, care_benefit=508.44;
+
 int main() {
+
   //int x,y;
   //int row,col;
- 
+
  float addition = 0.00;
  addition = sum(mbank,tipsport,bank_notes,coins,care_benefit);  
  
@@ -16,16 +19,18 @@ int main() {
   tc_move_cursor(0,0);
   
   //fprintf(stdout, "%s%sEnter the number: %s ",TC_WHT,TC_BG_CYN,TC_NRM);
-
-  printf("%13s %s%8.2f %s\n","Mbank:",TC_GRN, mbank,TC_NRM);
-  printf("%13s %s%8.2f %s\n","Tipsport:",TC_GRN, tipsport,TC_NRM);
-  printf("%13s %s%8.2f %s\n","Bank notes:",TC_GRN, bank_notes,TC_NRM);
-  printf("%13s %s%8.2f %s\n","Coins:",TC_GRN, coins,TC_NRM);
-  printf("%13s %s%8.2f %s\n","Care benefit:",TC_GRN, care_benefit,TC_NRM);
+  printf("       Mbank: %s   %2.2f %s\n",TC_GRN,mbank,TC_NRM); 
+  printf("    Tipsport: %s    %2.2f %s\n",TC_GRN,tipsport,TC_NRM);
+  printf("  Bank notes: %s   %7.2f %s\n",  TC_GRN,bank_notes,TC_NRM);
+  printf("       Coins: %s   %7.2f %s\n",  TC_GRN,coins,TC_NRM);
+  printf("Care benefit: %s   %7.2f %s\n",  TC_GRN,care_benefit,TC_NRM);
   puts("");
-  printf("%13s %s%8.2f %s\n","Sum:",TC_GRN,addition,TC_NRM);
-  puts("");
+  printf("         Sum: %s   %7.2f %s",  TC_GRN,addition,TC_NRM);
+  /* printf("%s%sMbank:%s %035.2f\n",TC_WHT,TC_BG_CYN,TC_NRM,1662.53); */
+  /* printf("%s%sTipsport:%s %035.2f\n",TC_WHT,TC_BG_CYN,TC_NRM,1502.36); */
+  /* printf("%s%sBank notes:%s %035.2f",TC_WHT,TC_BG_CYN,TC_NRM,40.36); */
   
+  /* fprintf(stdout, "%sHello World!\n%s",TC_GRN,TC_NRM); */
   // outer for loop x for rows, lines
   //tc_echo_on();
   
@@ -45,16 +50,24 @@ int main() {
   /*   for ( y = 0; y < 3; y++) */
   /*     printf("X"); */
 
-  char c = getchar();
+
   
+  char c = getchar();
   tc_exit_alt_screen();
   tc_echo_on();
   
+  
+
+
+
+
+
+ 
   return 0; 
 }
 
 float sum(float tipsport,float mbank, float bank_notes, float coins, float care_benefit) {
-  float sum = 0.0;
+  float sum = 0.00;
   sum = mbank + tipsport + bank_notes + coins + care_benefit;  
   return sum;
 }
