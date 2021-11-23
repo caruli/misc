@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include "tc.h"
 
-float sum(float mbank, float tipsport, float bank_notes, float coins, float care_benefit);
-float mbank = 72.06, tipsport = 0.80,bank_notes = 185.00, coins=13.30, care_benefit=508.44;
+float sum(float mbank, float tipsport, float bank_notes, float coins, float care_benefit,float debt);
+float mbank = 191.49, tipsport = 0.80,bank_notes = 205.00, coins=13.30, care_benefit=3216.76, debt=-900;
 int main() {
   //int x,y;
   //int row,col;
  
  float addition = 0.00;
- addition = sum(mbank,tipsport,bank_notes,coins,care_benefit);  
+ addition = sum(mbank,tipsport,bank_notes,coins,care_benefit,debt);  
  
   tc_echo_off();
   tc_enter_alt_screen();
@@ -22,6 +22,7 @@ int main() {
   printf("%13s %s%8.2f %s\n","Bank notes:",TC_GRN, bank_notes,TC_NRM);
   printf("%13s %s%8.2f %s\n","Coins:",TC_GRN, coins,TC_NRM);
   printf("%13s %s%8.2f %s\n","Care benefit:",TC_GRN, care_benefit,TC_NRM);
+  printf("%13s %s%8.2f %s\n","Debt:",TC_RED, debt,TC_NRM);
   puts("");
   printf("%13s %s%8.2f %s\n","Sum:",TC_GRN,addition,TC_NRM);
   puts("");
@@ -53,8 +54,8 @@ int main() {
   return 0; 
 }
 
-float sum(float tipsport,float mbank, float bank_notes, float coins, float care_benefit) {
+float sum(float tipsport,float mbank, float bank_notes, float coins, float care_benefit,float debt) {
   float sum = 0.0;
-  sum = mbank + tipsport + bank_notes + coins + care_benefit;  
+  sum = mbank + tipsport + bank_notes + coins + care_benefit + debt;  
   return sum;
 }
