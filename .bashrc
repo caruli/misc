@@ -27,5 +27,5 @@ alias setkey='setxkbmap -rules evdev -model pc105 -layout "us,sk,il" -option "gr
 
 export HISTCONTROL=$HISTCONTROL:ignorespace
 HISTCONTROL=ignoreboth
-token=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
+
 
