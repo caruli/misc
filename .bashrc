@@ -3,6 +3,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# test
 PS1='[\u@\h \W]\$ '
 alias ps='ps -u pi'
 alias ls='ls --color=auto'
