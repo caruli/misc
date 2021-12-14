@@ -1,13 +1,3 @@
-alias hs='history'
-alias hsr='history -r pk_history'
-alias ec='emacsclient -c '
-alias ed='emacs --daemon'
-alias egrep='egrep --color=auto'
-alias enw='emacs -nw'
-alias fgrep='fgrep --color=auto'
-alias grep='grep --color=auto'
-alias ls='ls --color=auto'
-alias lsblk='lsblk -o name,size,mountpoint,label' # show disk's labels
 alias ll='ls -l /dev/disk/by-label' # show disk labels with ls cmd
 sudo mount -t vfat  /dev/sdx1 /mnt/ -o uid=1000,gid=1000 # mount usb with pi permissions
 sudo mount -t ntfs-3g -o rw,uid=1000,gid=1000,dmask=022 /dev/sdx /media # ntfs permission
