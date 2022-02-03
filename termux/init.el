@@ -10,6 +10,25 @@
 (menu-bar-mode -1)
 ;;(tool-bar-mode -1)
 ;;(scroll-bar-mode -1)
+(hl-line-mode -1)
+(blink-cursor-mode 10)
+
+(load-theme 'deeper-blue t)
+
+(defun close-and-kill-this-pane ()
+      "If there are multiple windows, then close this pane and kill the buffer in it also."
+      (interactive)
+      (kill-this-buffer)
+      (if (not (one-window-p))
+          (delete-window)))
+
+(defun close-and-kill-next-pane ()
+      "If there are multiple windows, then close the other pane and kill the buffer in it also."
+      (interactive)
+      (other-window 1)
+      (kill-this-buffer)
+      (if (not (one-window-p))
+          (delete-window)))
 
 ;;; describe this point lisp only
 	(defun describe-foo-at-point ()
@@ -43,5 +62,10 @@
     (define-key emacs-lisp-mode-map [(shift f1)] 'describe-variable)
 
 
-
 (setq gc-cons-trashold (* 2 1000 1000))
+
+;; testing
+(setq completion-styles
+      '(basic substring initials flex partial-completion orderless))
+
+
