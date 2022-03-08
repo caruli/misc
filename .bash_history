@@ -1,27 +1,18 @@
-unset HISTFILE
-alias hs='history'
-alias hsr='history -r pk_history'
-alias ec='emacsclient -c '
-alias ed='emacs --daemon'
-alias egrep='egrep --color=auto'
-alias enw='emacs -nw'
-alias fgrep='fgrep --color=auto'
-alias grep='grep --color=auto'
-alias ls='ls --color=auto'
-alias lsblk='lsblk -o name,size,mountpoint,label' # show disk's labels
-alias ll='ls -l /dev/disk/by-label' # show disk labels with ls cmd
 sudo mount -t vfat  /dev/sdx1 /mnt/ -o uid=1000,gid=1000 # mount usb with pi permissions
-sudo mount -t ntfs-3g -o rw,uid=1000,gid=1000,dmask=022 /dev/sdx /media # ntfs permission
+sudo mount -t ntfs-3g -o rw,uid=1000,gid=1000,dmask=022 -L   /media # ntfs permission
 sudo apt install git libxft-dev   # minimum buster packages
 sudo apt install xserver-xorg x11-xserver-utils xinit # minimal X window gui
 sudo apt remove xterm # not needed packages
-git clone --depth 1 git://git.savannah.gnu.org/emacs.git
+git clone git://git.sv.gnu.org/emacs.git
 git clone --depth 1 https://gitlab.com/protesilaos/dotfiles.git ~/Git/prot-dotfiles # prot gitlab
 git clone https://oldgit.suckless.org/2wm
 git clone https://git.suckless.org/st
 git clone https://git.suckless.org/dmenu
 git clone https://git.suckless.org/surf
 unzip -p *.zip | sudo dd of=/dev/sdx bs=4M conv=fsync status=progress  # make image
+sudo dd bs=4M if=.iso of=/dev/sdX conv=fdatasync  status=progress # iso
+sudo mount -L videos /media # mount with labels of hard drive
+sudo ntfslabel -f /dev/sda1  new_label # change ntfs label name
 pkill emacs     # process kill signal by name
 sudo mount.exfat /dev/sdx  /mnt  # SD card 64GB  mount in USB flash stick
 apk add gst-plugins-good # surf-2.0 for playing videos on youtube
@@ -47,4 +38,4 @@ count-words # M-=
 just-one-space # M-SPC delete all spaces and tabs around point, leaving one space
 backword-kill-word # M-<delete>
 kill-line-backward # M-k
-
+org-comment-dwim C-; # comment org headings
