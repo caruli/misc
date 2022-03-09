@@ -8,12 +8,17 @@
       visible-bell t) ; C-M-x Ctrl-Alt-x eval-defun evaluate anywhere in funcion
 (setq initial-scratch-message "")
 (menu-bar-mode -1)
-;;(tool-bar-mode -1)
+(tool-bar-mode -1)
 ;;(scroll-bar-mode -1)
 (hl-line-mode -1)
-(blink-cursor-mode 10)
-
+(blink-cursor-mode -10)
 (load-theme 'deeper-blue t)
+(recentf-mode 1)
+(setq history-length 20)
+(savehist-mode 1)
+(save-place-mode 1)
+(setq custom-file (locate-user-emacs-file "custom-vars.el"))
+(load custom-file 'noerror 'nomessage)
 
 (defun close-and-kill-this-pane ()
       "If there are multiple windows, then close this pane and kill the buffer in it also."
@@ -29,6 +34,8 @@
       (kill-this-buffer)
       (if (not (one-window-p))
           (delete-window)))
+(define-key emacs-lisp-mode-map (kbd "<f2>") 'close-and-kill-next-pane)
+
 
 ;;; describe this point lisp only
 	(defun describe-foo-at-point ()
@@ -63,7 +70,6 @@
 
 
 (setq gc-cons-trashold (* 2 1000 1000))
-
 ;; testing
 (setq completion-styles
       '(basic substring initials flex partial-completion orderless))
