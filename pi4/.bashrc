@@ -130,6 +130,8 @@ export HISTIGNORE="&:ls:[bf]g:exit:pwd:clear:mount:umount:[ \t]*"
 export CFLAGS="-Wall -g"
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/pi/c
 
+
+
 unset HISTFILE
 export HISTIGNORE="ls:pwd:clear,echo"
 alias x='startx'
@@ -146,9 +148,10 @@ alias lsblk='lsblk -o name,size,mountpoint,label' # show disk's labels
 alias ll='ls -l /dev/disk/by-label' # show disk labels with ls cmd
 alias ek='emacsclient -e "(kill-emacs)"'
 bind -x '"\M-z"':"ec" # M+Z ALT+Z 
-alias setkey='setxkbmap -rules evdev -model pc105 -layout "us,sk,il" -option "grp:ctrls_toggle,grp_led:caps"'
+#alias setkey='setxkbmap -rules evdev -model pc105 -layout "us,sk,il" -option "grp:ctrls_toggle,grp_led:caps"'
+setxkbmap -rules evdev -model pc105 -layout "us,sk,il" -option "grp:ctrls_toggle,grp_led:caps"
 
 
 #export XDG_CONFIG_HOME=$HOME/.config/weston.ini
-#
+
 
