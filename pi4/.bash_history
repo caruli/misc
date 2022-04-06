@@ -3,12 +3,14 @@ sudo mount -t ntfs-3g -o rw,uid=1000,gid=1000,dmask=022 -L label /media # mount 
 sudo apt install git libxft-dev   # minimum buster packages
 sudo apt install xserver-xorg x11-xserver-utils xinit # minimal X window gui
 sudo apt remove xterm # not needed packages
+git clone https://github.com/bontibon/kjv.git
 git clone git://git.sv.gnu.org/emacs.git
 git clone --depth 1 https://gitlab.com/protesilaos/dotfiles.git ~/Git/prot-dotfiles # prot gitlab
 git clone https://oldgit.suckless.org/2wm
 git clone https://git.suckless.org/st
 git clone https://git.suckless.org/dmenu
 git clone https://git.suckless.org/surf
+patch -p1 < # patches suckless
 unzip -p *.zip | sudo dd of=/dev/sdx bs=4M conv=fsync status=progress  # make image
 sudo dd bs=4M if=.iso of=/dev/sdX conv=fdatasync  status=progress # iso
 sudo ntfslabel -f /dev/sda1  new_label # change ntfs label name
