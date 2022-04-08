@@ -19,6 +19,36 @@
 (setq custom-file (locate-user-emacs-file "custom-vars.el"))
 (load custom-file 'noerror 'nomessage)
 
+(set-face-attribute 'default nil  :height 220)
+(setq-default bidi-display-reordering nil)
+
+(defun bidi-reordering-toggle ()
+   "Toggle bidirectional display reordering."
+   (interactive)
+   (setq bidi-display-reordering (not bidi-display-reordering))
+   (message "bidi reordering is %s" bidi-display-reordering))
+
+(setq-default bidi-paragraph-direction 'left-to-right)
+(defun bidi-direction-toggle ()
+      "Will switch the explicit direction of text for current
+      buffer. This will set BIDI-DISPLAY-REORDERING to T"
+    (interactive "")
+    (setq bidi-display-reordering t)
+    (if (equal bidi-paragraph-direction 'right-to-left)
+        (setq bidi-paragraph-direction 'left-to-right)
+      (setq bidi-paragraph-direction 'right-to-left)
+      )
+    (message "%s" bidi-paragraph-direction))
+
+(defun bidi-display-reodering-on ()
+  "Sets bidi-display-reodering on"
+  (setq-local bidi-display-reodering t))
+(add-hook 'text-mode-hook 'bidi-display-reodering-on)
+
+
+
+
+
 (defun close-and-kill-this-pane ()
       "If there are multiple windows, then close this pane and kill the buffer in it also."
       (interactive)
