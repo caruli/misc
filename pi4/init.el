@@ -120,6 +120,7 @@
 (quail-define-rules
  (">a" ?ʾ) ;; aleph
  ("<a" ?ʿ) ;; ayin    
+ ("_'" ?֫)  ;; accent  
  ("_a" ?ā)
  ("_e" ?ē)
  ("_i" ?ī)
@@ -135,17 +136,17 @@
  ("_d" ?ḏ)
  ("_k" ?ḵ)
  ("_p" ?ꝑ)
-;; ("_p" ?p)
  ("_t" ?ṯ)
- ("_h" ?ḥ)
- ("_s" ?š))
- 
+ (".a" ?ᵃ)
+ (".h" ?ḥ)
+ ("_s" ?š)
+ (".s" ?ṣ)
+ (".t" ?ṭ)
+ )       
+(setq org-odt-preferred-output-format "docx")  
 ;;  p  0070
 ;;  ̱  0331
-
-
-
-
+ 
 (setq gc-cons-trashold (* 2 1000 1000))
 ;; testing
 (setq completion-styles
