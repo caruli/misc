@@ -21,10 +21,6 @@
 
 (set-face-attribute 'default nil :font "JetBrainsMono" :height 220)
 ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono"  :height 220)
-;;(set-face-attribute 'default nil :font FONT )
-;;(set-frame-font "SourceCodePro-Regular" nil t)
-
-
 
 (setq-default bidi-display-reordering nil)
 
@@ -50,10 +46,6 @@
   "Sets bidi-display-reodering on"
   (setq-local bidi-display-reodering t))
 (add-hook 'text-mode-hook 'bidi-display-reodering-on)
-
-
-
-
 
 (defun close-and-kill-this-pane ()
       "If there are multiple windows, then close this pane and kill the buffer in it also."
@@ -102,20 +94,6 @@
     (define-key emacs-lisp-mode-map [(control f1)] 'describe-function)
     (define-key emacs-lisp-mode-map [(shift f1)] 'describe-variable)
 
-
-;; coding system
-;; (setq utf-translate-cjk-mode nil) ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
-;;   (set-language-environment 'utf-8)
-;;  ;; (set-keyboard-coding-system 'utf-8-mac) ; For old Carbon emacs on OS X only
-;;   (setq locale-coding-system 'utf-8)
-;;   (set-default-coding-systems 'utf-8)
-;;   (set-terminal-coding-system 'utf-8)
-;;   (set-selection-coding-system
-;;     (if (eq system-type 'windows-nt)
-;;         'utf-16-le  ;; https://rufflewind.com/2014-07-20/pasting-unicode-in-emacs-on-windows
-;;       'utf-8))
-;;   (prefer-coding-system 'utf-8)
-
 (quail-define-package "macron-underline" "Macron" "MC")
 (quail-define-rules
  (">a" ?ʾ) ;; aleph
@@ -142,11 +120,14 @@
  ("_s" ?š)
  (".s" ?ṣ)
  (".t" ?ṭ)
- )       
+ )
+
+(add-hook 'text-mode-hook
+  (lambda () (set-input-method "macron-underline")))
 (setq org-odt-preferred-output-format "docx")  
 ;;  p  0070
 ;;  ̱  0331
- 
+
 (setq gc-cons-trashold (* 2 1000 1000))
 ;; testing
 (setq completion-styles
