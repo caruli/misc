@@ -98,7 +98,8 @@
 (quail-define-rules
  (">a" ?ʾ) ;; aleph
  ("<a" ?ʿ) ;; ayin    
- ("_'" ?֫)  ;; accent  
+ ("_<" ?֫)  ;; accent in hebrew ֫ 
+ ("'"?´)   ;; acute accent dlzen   
  ("_a" ?ā)
  ("_e" ?ē)
  ("_i" ?ī)
@@ -116,6 +117,7 @@
  ("_p" ?ꝑ)
  ("_t" ?ṯ)
  (".a" ?ᵃ)
+ (".e" ?ᵉ) 
  (".h" ?ḥ)
  ("_s" ?š)
  (".s" ?ṣ)
@@ -125,8 +127,6 @@
 (add-hook 'text-mode-hook
   (lambda () (set-input-method "macron-underline")))
 (setq org-odt-preferred-output-format "docx")  
-;;  p  0070
-;;  ̱  0331
 
 (setq gc-cons-trashold (* 2 1000 1000))
 ;; testing
