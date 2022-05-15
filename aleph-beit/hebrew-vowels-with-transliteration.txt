@@ -1,0 +1,7 @@
+Short vowels               Long vowels      Historically long
+                               
+A בַּ ba paṯaḥ         ַ      בָּ bā qāmeṣ	    בָּה bâ qāmeṣ hē	
+E בֶּ be sᵉgôl         ֶ      בֵּ bē ṣerē        בֵּי  bê ṣērê yôd
+I בִּ bi ḥîreq         ִ      בּ none           בִּי  bî ḥîreq yôd
+O בָּ bo qāmeṣ ḥātûꝑ   ָ      בֹּ bō ḥôlem       בּוֹ  bô ḥôlem wāw
+U בֻּ bu qibbûṣ        ֻ      בּ none	    בּוּ  bû šûreq 

@@ -1,0 +1,5 @@
+1. One vowel = one syllable.
+   Every Hebrew syllable has at least one voewl, so the number of vowels = the number of syllables.
+    דָּבָר (word) has 2 vowels, and so 2 syllables.
+   הָאָרֶץ (the land) has 3 vowels, and so 3 syllables.
+      
