@@ -57,7 +57,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \$\[\033[00m\] '
+   # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \$\[\033[00m\] '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\[\033[00m\]\[\033[01;34m\]\w\[\033[00m\] '    
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -131,10 +132,11 @@ export CFLAGS="-Wall -g"
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/pi/c
 
 
-
+export LANG=en_US.UTF-8
 unset HISTFILE
 export HISTIGNORE="ls:pwd:clear,echo"
 alias x='startx'
+alias b='bible'
 alias hs='history'
 alias hsr='history -r .bash_history'
 alias ec='emacsclient -c '
@@ -148,10 +150,16 @@ alias lsblk='lsblk -o name,size,mountpoint,label' # show disk's labels
 alias ll='ls -l /dev/disk/by-label' # show disk labels with ls cmd
 alias ek='emacsclient -e "(kill-emacs)"'
 bind -x '"\M-z"':"ec" # M+Z ALT+Z 
-#alias setkey='setxkbmap -rules evdev -model pc105 -layout "us,sk,il" -option "grp:ctrls_toggle,grp_led:caps"'
-setxkbmap -rules evdev -model pc105 -layout "us,sk,il" -option "grp:ctrls_toggle,grp_led:caps"
+
+# this one works ok   alt + shift
+#setxkbmap -rules evdev -model pc105 -layout "us,sk,il" -option -option grp:alt_shift_toggle,compose:lwin_switch,lv3:rwin_switch,grp_led:scroll
+
+# Win + Space  
+setxkbmap -rules evdev -model pc105 -layout "us,sk,il" -option -option grp:win_space_toggle,compose:lwin_switch,lv3:rwin_switch,grp_led:scroll
 
 
+
+export PATH="$PATH:~/src/dart-sdk/bin"
 #export XDG_CONFIG_HOME=$HOME/.config/weston.ini
 
 
