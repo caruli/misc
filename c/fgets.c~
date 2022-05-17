@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int main() {
+  char text[100]; //int i;
+
+  printf("type a line of text here: ");
+  fgets(text,100,stdin);
+  text[strlen(text) - 1] = '\0' ;
+  // fgets function saved into text that we typed also  enter '\n' new line character
+
+  /* for(int i= 0; i <= strlen(text); i++) { */
+  /*   printf("%d ", text[i]); */
+  /* }  */
+
+  puts("");
+  printf("You typed the line: %s\n", text);
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  return 0;
+}

@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int  main() {
+
+  int a = 1;
+
+  float i = 8.89, age = 4, clock = 3 ;
+  float sal = 45.34;
+  
+  printf("I am i = %.3f a = %d\n",i,a);
+
+    
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  return 0;
+  
+}

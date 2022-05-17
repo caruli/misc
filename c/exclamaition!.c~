@@ -1,0 +1,7 @@
+#inlude <stdio.io>
+
+int main() {
+  int number = 5;
+
+  if (number != 4 )
+    printf("number %d is not equal to 4\n",number);
