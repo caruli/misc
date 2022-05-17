@@ -2,7 +2,7 @@
 #include "tc.h"
 
 float sum(float mbank, float tipsport, float bank_notes, float coins, float care_benefit,float debt);
-float mbank = 3287.26, tipsport = 900.00,bank_notes = 65.23, coins=0.00, care_benefit= 00.00, debt=0.00;
+float mbank = 3356.06, tipsport = 900.00,bank_notes = 65.23, coins=0.00, care_benefit= 00.00, debt=0.00;
 int main() {
   //int x,y;
   //int row,col;
