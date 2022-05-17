@@ -151,11 +151,12 @@ alias ll='ls -l /dev/disk/by-label' # show disk labels with ls cmd
 alias ek='emacsclient -e "(kill-emacs)"'
 bind -x '"\M-z"':"ec" # M+Z ALT+Z 
 
-# this one works ok   alt + shift
-#setxkbmap -rules evdev -model pc105 -layout "us,sk,il" -option -option grp:alt_shift_toggle,compose:lwin_switch,lv3:rwin_switch,grp_led:scroll
 
-# Win + Space  
-setxkbmap -rules evdev -model pc105 -layout "us,sk,il" -option -option grp:win_space_toggle,compose:lwin_switch,lv3:rwin_switch,grp_led:scroll
+# this one works ok   alt + shift
+setxkbmap -rules evdev -model pc105 -layout "us,sk,il" -option -option grp:alt_shift_toggle,compose:lwin_switch,lv3:rwin_switch,grp_led:scroll
+
+# Win + Space  used by dwm 
+#setxkbmap -rules evdev -model pc105 -layout "us,sk,il" -option -option grp:win_space_toggle,compose:lwin_switch,lv3:rwin_switch,grp_led:scroll
 
 
 
