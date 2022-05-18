@@ -146,7 +146,7 @@ alias enw='emacs -nw'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
-alias lsblk='lsblk -o name,size,mountpoint,label,PARTUUID' # show disk's labels
+alias lsblk='lsblk -o name,size,mountpoint,label' # show disk's labels
 alias ll='ls -l /dev/disk/by-label' # show disk labels with ls cmd
 alias ek='emacsclient -e "(kill-emacs)"'
 bind -x '"\M-z"':"ec" # M+Z ALT+Z 

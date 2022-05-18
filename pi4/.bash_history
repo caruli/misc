@@ -1,6 +1,7 @@
 #sudo mount -t vfat  /dev/sdx /mnt/ -o uid=1000,gid=1000 # mount usb with pi permissions
 sudo mount -t ntfs-3g -o rw,uid=1000,gid=1000,dmask=022 -L label /media # mount hd 
 sudo apt install git libxft-dev   # minimum buster packages
+sudo mkfs.fat -F 32 -I -n  'verbatin' /dev/sdx # format fat32
 sudo apt install xserver-xorg x11-xserver-utils xinit # minimal X window gui
 sudo apt remove xterm # not needed packages
 git clone https://github.com/bontibon/kjv.git
@@ -41,3 +42,4 @@ backword-kill-word # M-<delete>
 kill-line-backward # M-k
 org-comment-dwim C-; # comment org headings
 sudo dpkg-reconfigure keyboard-configuration # keyboard setup raspberry debian
+
