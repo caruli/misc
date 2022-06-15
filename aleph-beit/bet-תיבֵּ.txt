@@ -1,7 +1,10 @@
  05AB ֫ Ole accent mark it is used also as a stress mark         
 house of     בֵּית  bêṯ
-babel        בָּבֶל  bāḇel    
+babel        בָּבֶל  bāḇel      zmätok    
 Baal         בַּ֫עַל  báʿal                  
 Boaz         בֹּעַז  bōʿz                
 flesh body          בָּשָׂר  bāsār
 surely		    בָּנֹה  bānōh    
+
+
+                    
