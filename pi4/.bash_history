@@ -1,4 +1,4 @@
-#sudo mount -t vfat  /dev/sdx /mnt/ -o uid=1000,gid=1000 # mount usb with pi permissions
+sudo mount -t vfat  /dev/sdx /mnt/ -o umask=007,uid=1000,gid=1000 # mount usb with pi permissions
 sudo mount -t ntfs-3g -o rw,uid=1000,gid=1000,dmask=022 -L label /media # mount hd 
 sudo apt install git libxft-dev   # minimum buster packages
 sudo mkfs.fat -F 32 -I -n  'verbatin' /dev/sdx # format fat32

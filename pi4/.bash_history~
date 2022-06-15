@@ -4,6 +4,7 @@ sudo apt install git libxft-dev   # minimum buster packages
 sudo mkfs.fat -F 32 -I -n  'verbatin' /dev/sdx # format fat32
 sudo apt install xserver-xorg x11-xserver-utils xinit # minimal X window gui
 sudo apt remove xterm # not needed packages
+wget https://raw.githubusercontent.com/caruli/bash_aliases/master/.bashrc # one file only from github
 git clone https://github.com/bontibon/kjv.git
 git clone git://git.sv.gnu.org/emacs.git
 git clone --depth 1 https://gitlab.com/protesilaos/dotfiles.git ~/Git/prot-dotfiles # prot gitlab

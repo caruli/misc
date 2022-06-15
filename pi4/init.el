@@ -3,8 +3,11 @@
 	   (format "%.2f seconds" (float-time (time-subtract after-init-time before-init-time)))  gcs-done))
 (add-hook 'emacs-startup-hook #'efs/display-startup-time)
 
-(setq inhibit-startup-message t
-      visible-bell -1) ; C-M-x Ctrl-Alt-x eval-defun evaluate anywhere in funcion
+(setq inhibit-startup-message t); C-M-x Ctrl-Alt-x eval-defun evaluate anywhere in funcion
+
+(setq visible-bell nil
+      ring-bell-function #'ignore)
+
 (setq initial-scratch-message "")
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -21,6 +24,16 @@
 
 (set-face-attribute 'default nil :font "JetBrainsMono" :height 220)
 ;;(set-face-attribute 'default nil :font "DejaVu Sans Mono"  :height 220)
+
+(add-hook 'dired-mode-hook #'dired-hide-details-mode)
+
+(defun me/org-mode-setup ()
+  (org-indent-mode)
+  (variable-pitch-mode)
+  (auto-fill-mode 0)
+  (visual-line-mode 1))
+
+
 
 (setq-default bidi-display-reordering nil)
 
@@ -94,11 +107,11 @@
     (define-key emacs-lisp-mode-map [(control f1)] 'describe-function)
     (define-key emacs-lisp-mode-map [(shift f1)] 'describe-variable)
 
-(quail-define-package "macron-underline" "Macron" "MC")
+(quail-define-package "transliteration" "phonetic" "TPH")
 (quail-define-rules
- (">a" ?ʾ) ;; aleph
+ (">a" ?ʾ) ;; aleph  
  ("<a" ?ʿ) ;; ayin    
- ("_<" ?֫)  ;; accent in hebrew ֫ 
+ ("_<" ?֫)  ;; HEBREW ACCENT OLE is uede also  as a stress marker in texts without cantillation.    
  ("'"?´)   ;; acute accent dlzen   
  ("_a" ?ā)
  ("_e" ?ē)
@@ -124,8 +137,8 @@
  (".t" ?ṭ)
  )
 
-(add-hook 'text-mode-hook
-  (lambda () (set-input-method "macron-underline")))
+;; (add-hook 'text-mode-hook
+;;   (lambda () (set-input-method "macron-underline")))
 (setq org-odt-preferred-output-format "docx")  
 
 (setq gc-cons-trashold (* 2 1000 1000))
